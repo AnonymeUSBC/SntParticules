@@ -1,0 +1,254 @@
+@font-face {
+    font-family: 'Getboreg';
+    src: url("../static/font/GetboregTrialOnly-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Reef';
+    src: url("../static/font/Reef.otf");
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.webgl
+{
+    position: relative;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#background 
+{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.title 
+{
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    font-family: 'Getboreg';
+}
+
+.title_container
+{
+    width: 40%;
+}
+
+.image_container 
+{
+    width: 50%;
+    height: 300px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 20px;
+    align-items: center;
+    transform: scale(0.5);
+    overflow: hidden;
+    scrollbar-width: none;
+}
+
+.image_container::-webkit-scrollbar 
+{
+    display: none;
+}
+
+.image {
+    width: 100%; 
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover; 
+    transform: scale(2);
+}
+
+.box
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30%;
+}
+
+.subtitle
+{
+    margin-top: 3%;
+    color: gray;
+    font-family: 'Getboreg';
+    font-size: 80%;
+}
+
+.expanded
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    margin: 0;
+    transform: scale(1);
+    overflow: scroll;
+}
+
+.text_container
+{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.text
+{
+    margin-top: 10%;
+    font-family: 'Reef';
+    font-size: 130%;
+    width: 70%;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+
+#loader {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#loader-progression {
+    color: white;
+    font-family: 'Arial';
+    font-size: 100%;
+    cursor: pointer;
+}
+
+#loader-circle {
+    width: 150px; /* Diamètre du cercle */
+    height: 150px; /* Diamètre du cercle */
+    border: 1px solid white; /* Couleur et épaisseur de la bordure */
+    border-radius: 50%; /* Rend la bordure circulaire */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.5s;
+    position: absolute;
+}
+
+#loader-circle:hover {
+    transform: scale(1.3); /* Agrandit uniquement le cercle */
+    transform-origin: center;
+}
+
+#loader-progression_under {
+    position: absolute;
+    color: white;
+    font-family: 'Arial';
+    font-size: 100%;
+    cursor: pointer;
+}
+
+#loader-progression_container
+{
+    position: absolute;
+    overflow: hidden;
+}
+
+#cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px; /* Réduisez la taille si nécessaire */
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid black;
+    border-radius: 50%;
+    pointer-events: none; /* Pour ne pas interférer avec les clics */
+    z-index: 1000; /* Place le curseur au-dessus de tous les autres éléments */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    transform: translate(-50%, -50%)
+}
+
+#cursor-text
+{
+    font-size: 20%;
+    font-family: 'Getboreg';
+    opacity: 0;
+    color: white;
+}
+
+.text-image
+{
+    width: 200px;
+    height: 100px;
+    border-radius: 20px;
+    position: absolute;
+}
+
+#icon_container {
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
+
+#github
+{
+    width: 100px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#github:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 0.75rem crimson);
+}
+
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+.text ol {
+    text-align: left;
+}

@@ -1,0 +1,146 @@
+<!--
+
+**********
+Information pour la notation du barême
+**********
+
+"La page contient une liste (balise):""
+<ul>
+    <li>Texte</li>
+</ul>
+
+je n'ai pas d'inspiration d'où la mettre, je pense qu'il vaut mieux ne pas l'insérer comme ça
+~~~~~~~~~~~~~~~~	
+
+"L’auteur / autrice de l’image est nommée"
+
+... C'est des captures d'écrans que j'ai faites sur des choses que j'avais faits, donc JE suis l'auteur
+~~~~~~~~~~~~~~~~	
+
+"Expliquer pourquoi vous avez le droit d’utiliser cette image"
+
+... Comme je l'avais dis c'est des captures d'écrans que j'ai faites sur des choses que j'avais faits.
+~~~~~~~~~~~~~~~~	
+
+.... Sinon j'ai bien insérer h1, h2, p, br, i, du css, un a vers une page web (tout en bas dans la page)
+
+-->    
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SNT Particules</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div id="background"></div>
+        <canvas class="webgl"></canvas>
+        <div class="box">
+            <div class="title_container">
+                <h1 class="title" id="text1">Developpement Web Front-End</h1>
+                <h2 class="subtitle" id="subtext1">Cliquez sur l'image pour voir en detaille.</h2>
+            </div>
+            <div class="image_container" id="img_container1">
+                <img src="/img/1.png" class="image" id="img1">
+                <div class="text_container">
+                    <p class="text">
+                        <span id="text1-1">
+                            Création d'un site web pour la SNT, a mené à l'écriture de shader pour l'animation du texte de fond et de l'arrière plan du site.
+                            Site 3D (library ThreeJS) avec un block de verre contenant des fichiers glb (fichiers gltf que j'ai récupéré puis bakes sur blender), le tout tournant au scroll, utilisant la library GSAP.
+                        </span><br/><br/>
+                        <span id="text1-2">
+                            Refonte d'un site web existant, modification majeur comme le changement de contraste des couleurs, 
+                            recréation de la barre de navigation, d'une barre horizontale textuelle à reveal à une barre vertical à icon (google font icons).
+                        </span><br/><br/>
+                        <span id="text1-3">
+                            Création d'un site pour la présentation d'un travail en technologie. 
+                            Modélisation de la lampe sur blender + bake de cette dernière avant de l'importer dans la scene threejs.
+                        </span><br/><br/>
+                        <span id="text1-4">
+                            Création d'un site pour un exposé en SVT, sur le sable, qui a inspiré un arrière plan à particule en rotation par rapport au centre sur Threejs.
+                        </span><br/><br/>
+                        Principales technologies utilisés :
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image_container" id="img_container2">
+                <img src="/img/1.png" class="image" id="img2">
+                <div class="text_container">
+                    <p class="text">
+                        <span id="text2-1">
+                            Le language principal que j'utilise pour le back-end est le <i>PHP</i>,
+                            pour sa structuration, et le fait qu'il est le plus utilisé pour le back-end sur le web.
+                        </span><br/><br/>
+                        <span id="text2-2">
+                            En système de gestion de base de données j'utilise principalement <i>mySql</i>,
+                            et pour la connexion depuis le php je préfère mysqli_connect à <i>PDO</i>.
+                        </span><br/><br/>
+                        <span id="text2-3">
+                            En structuration du code <i>PHP</i> j'utilise principalement la programmation orienté objet,
+                            qui semble plus claire et lisible, ainsi que plus flexible et modulable.
+                        </span><br/><br/>
+                        <span id="text2-4">
+                            Pour structurer les gros projets, je préfère les structurés avec une architecture <i>MVC</i>,
+                            qui permet de séparer le code en plusieurs parties et de faciliter la modification et la maintenance.
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="title_container">
+                <h1 class="title" id="text2">Developpement Web Back-End</h1>
+                <h2 class="subtitle" id="subtext2">Cliquez sur l'image pour voir en detaille.</h2>
+            </div>
+        </div>
+        <div class="box">
+            <div class="title_container">
+                <h1 class="title" id="text3">Design 2D + 3D</h1>
+                <h2 class="subtitle" id="subtext3">Cliquez sur l'image pour voir en detaille.</h2>
+            </div>
+            <div class="image_container" id="img_container3">
+                <img src="/img/3.png" class="image" id="img3">
+                <div class="text_container">
+                    <p class="text">
+                        <span id="text3-1">
+                            Création d'une affiche sous blender & figma, le thème de l'affiche mélange du glassmorphism avec des néon de couleur mauve.
+                            L'affiche contient également du fluide créer avec la physique de blender.
+                        </span><br/><br/>
+                        <span id="text3-2">
+                            Modélisation blender d'une lampe à néon moderne, 
+                            pour plus tard l'insérer sur un site avec TreeJS.
+                        </span><br/><br/>
+                        <span id="text3-3">
+                            Modélisation d'une pièce semblable à une piscine liminal sur blender,
+                            pour s'entrainer sur la création d'eau sur blender, et sur le réalisme des rendus.
+                        </span><br/><br/>
+                        <span id="text3-4">
+                            Modélisation d'un couleur sur blender, pour s'entrainer sur les matériaux,
+                            ainsi que la création d'herbe, à partir de particules blender.
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="icon_container">
+            <a href="https://github.com/AnonymeUSBC/SntParticules" target=”_blank” >
+                <img src="/img/github.png" id="github">
+            </a>
+        </div>
+        <div id="cursor">
+            <p id="cursor-text">VOIR</p>
+        </div>
+        <div id="loader">
+            <div id="loader">
+                <div id="loader-circle"></div>
+                <div id="loader-progression_container">
+                    <h2 id="loader-progression"></h2>
+                    <h2 id="loader-progression_under">ENTRER</h2>
+                </div>
+            </div>        
+        </div>
+        <script type="module" src="./script.js"></script>
+    </body>
+    </html>
