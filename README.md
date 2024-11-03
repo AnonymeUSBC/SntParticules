@@ -1,2 +1,1 @@
-# SntParticules
-Code source du projet
+# Code Source du Projet
