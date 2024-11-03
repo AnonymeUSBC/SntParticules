@@ -255,4 +255,24 @@ container.addEventListener('mouseover', () =>
     })
 ```
 
-## 4. 
+## 4. Structuration du Code
+
+Pour l'organisation du code, j'ai évidemment décider de le détacher en plusieurs fichier modulable, et pris soin de placer d'un côté le code et de l'autre les ressources dont le site à besoin pour fonctionner (images, polices de caractères):
+
+/ SntParticules
+├── src
+│   ├── event.js
+│   ├─── gsap.js
+|   ├── index.html
+|   ├── script.js
+|   └─ style.css
+├── static
+│   ├── /env
+│   ├── /font
+│   ├── /img
+│   ├── /models
+│   └─  /textures
+├── package.json
+├── README.md
+└── vite.config.js
+
