@@ -298,3 +298,5 @@ J'ai divisé le code javascript en 3 fichiers distincts : `script.js` pour le ja
 │   ├── textImage2(text2_1, text2_2, text2_3, text2_4)
 └── └─ textImage3(text3_1, text3_2, text3_3, text3_4)
 ```
+
+## C'étais tout, merci
