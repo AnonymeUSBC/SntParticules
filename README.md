@@ -150,4 +150,31 @@ document.querySelectorAll('.image_container').forEach(container => {
 
 ## 3. Le Curseur
 
+Pour le curseur circulaire j'ai pris un div que j'ai arrondi, puis fait en sorte que ce dernier suivent le curseur avec GSAP.
+Je commence par récupérer les positions XY du curseur par rapport à la page quand le curseur bouge (cela aurait étais par rapport à l'écran si le curseur arrondi étais en "fixed")
+
+```
+let mouseX = 0, mouseY = 0;
+let cursorX = 0, cursorY = 0;
+
+window.addEventListener('mousemove', (e) => {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+});
+```
+
+Après je créer un ticker, qui va tourner à chaque tick, et déplacé le curseur arrondi vers le curseur, d'abord en récupérant à la distance à parcourir pour chaque axe X ou Y, je multiplie par 0.1 pour ralentir le mouvement, puis je fait avancer le cercle vers cette position :
+
+```
+gsap.ticker.add(() => {
+    cursorX += (mouseX - cursorX) * 0.1; 
+    cursorY += (mouseY - cursorY) * 0.1;
+
+    gsap.set(cursor, {
+        left: cursorX,
+        top: cursorY
+    });
+});
+```
+
 ## 4. 
