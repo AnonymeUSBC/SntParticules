@@ -48,7 +48,7 @@ const tick = () => {
 }
 ```
 
-Après je vais vouloir rétrécir la taille du canvas progressivement au scroll en pin (donc accroché à l'écran) jusqu'à cesser le pin.
+Après je vais vouloir rétrécir la taille du canvas progressivement au scroll en pin (donc accroché à l'écran) jusqu'à cesser le pin grâce à GSAP.
 
 ![Image du Canvas](https://github.com/AnonymeUSBC/SntParticules/blob/main/docAssets/Capture%20d'écran%202024-11-03%20103933.png)
 
@@ -73,6 +73,80 @@ Après je vais vouloir rétrécir la taille du canvas progressivement au scroll 
 ```
 
 ## 2. Les Titres / Images
+
+![Image du titre/image](https://github.com/AnonymeUSBC/SntParticules/blob/main/docAssets/Capture%20d'écran%202024-11-03%20105009.png)
+
+Pour l'animation des titres et des images j'ai également utiliser GSAP (je l'ai énormément utiliser animer ce site), je fait agrandir au scroll .image_container qui agit comme une wrapper, et je fait rétrécir au scroll les .images, pour appliquer un contre-scale, et donner l'impression que .image s'agrandis par le millieu. Pour faire cela je leur applique par défaut un width/height identique, mais des scales différents qui seront animé pour être identique à 1, sois la taille qu'il auront à leur "apogé" (quand on scroll vraiment dessus). Je commence par le CSS :
+
+```
+.image_container
+{
+    width: 100%;
+    height: 100%;
+    [...]
+    transform: scale(0.5);
+    [...]
+}
+[...]
+.image
+{
+    width: 100%;
+    height: 100%;
+    [...]
+    transform: scale(2);
+    [...]
+}
+```
+Puis le JavaScript GSAP, qui applique l'animation :
+
+```
+gsap.to(img_container1,
+    {
+        scale: 1,
+        scrollTrigger: {
+            trigger: img1,
+            toggleActions: "play none none reverse",
+            scrub: true,
+        }
+    }
+)
+
+gsap.to(img1,
+    {
+        scale: 1,
+        scrollTrigger: {
+            trigger: img1,
+            toggleActions: "play none none reverse",
+            scrub: true,
+        }
+    }
+)
+```
+Enfin je duplique cette effet sur les autres images :
+
+![Image du titre/image](https://github.com/AnonymeUSBC/SntParticules/blob/main/docAssets/Capture%20d'écran%202024-11-03%20105056.png)
+
+Après .image_container se détache de sa position et va prendre la quazi totalité de l'écran quand l'utilisateur clique dessus, pour cela le plugin Flip de GSAP est utilisé :
+
+```
+document.querySelectorAll('.image_container').forEach(container => {
+    container.addEventListener('click', () => 
+        {
+        const state = Flip.getState(container)
+
+        container.classList.toggle('expanded')
+
+        Flip.from(state, {
+            duration: 1,
+            ease: 'power2.inOut',
+        })
+
+        if (!container.classList.contains('expanded')) {
+            container.scrollTop = 0;
+        }
+    [...]
+}
+```
 
 ## 3. Le Curseur
 
