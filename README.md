@@ -177,4 +177,82 @@ gsap.ticker.add(() => {
 });
 ```
 
+Après un autre effet intéressant peut-être le changement de la forme du curseur. Pour cela j'utilise simplement GSAP, par example pour changer le curseur en changeant l'arrière plan, la taille, en enlevant la bordure et en ajoutant du texte, simplement en animant l'opacité de 0 à 1 (le texte étais déjà présent dans l'élement au départ mais avec une opacité de 0):
+
+```
+    container.addEventListener('mouseover', () => 
+    {
+        gsap.to(cursor,
+            {
+                scale: 2,
+                border: '0px solid black',
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                duration: 0.5,
+            }
+        )
+        gsap.to(cursorText,
+            {
+                opacity: 1,
+                duration: 0.5
+            }
+        )
+    }),
+    container.addEventListener('mouseout', () => 
+    {
+        gsap.to(cursor,
+            {
+                scale: 1,
+                border: '1px solid black',
+                backgroundColor: 'rgba(255, 255, 255, 0)',
+                duration: 0.5
+            }
+        )
+        gsap.to(cursorText,
+            {
+                opacity: 0,
+                duration: 0.5
+            }
+        )
+    })
+```
+
+De même pour changer le curseur en image, je retire la bordure, met une image en fond et ajuste la taille du curseur à l'image en question:
+
+```
+container.addEventListener('mouseover', () => 
+    {
+        gsap.to(cursor,
+            {
+                scale: 2,
+                border: '0px solid black',
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                duration: 0.5,
+            }
+        )
+        gsap.to(cursorText,
+            {
+                opacity: 1,
+                duration: 0.5
+            }
+        )
+    }),
+    container.addEventListener('mouseout', () => 
+    {
+        gsap.to(cursor,
+            {
+                scale: 1,
+                border: '1px solid black',
+                backgroundColor: 'rgba(255, 255, 255, 0)',
+                duration: 0.5
+            }
+        )
+        gsap.to(cursorText,
+            {
+                opacity: 0,
+                duration: 0.5
+            }
+        )
+    })
+```
+
 ## 4. 
