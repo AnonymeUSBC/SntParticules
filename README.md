@@ -259,6 +259,7 @@ container.addEventListener('mouseover', () =>
 
 Pour l'organisation du code, j'ai évidemment décider de le détacher en plusieurs fichier modulable, et pris soin de placer d'un côté le code et de l'autre les ressources dont le site à besoin pour fonctionner (images, polices de caractères):
 
+```
 / SntParticules
 ├── src
 │   ├── event.js
@@ -275,4 +276,25 @@ Pour l'organisation du code, j'ai évidemment décider de le détacher en plusie
 ├── package.json
 ├── README.md
 └── vite.config.js
+```
+J'ai divisé le code javascript en 3 fichiers distincts : `script.js` pour le javascript de base, ainsi que la partie 3D avec le canvas (j'aurais peutêtre du les séparers), `gsap.js` pour la plupart des animations GSAP, et `event.js` pour la plupart des events listeners. Les fichiers `gsap.js` et `event.js` avais une strcuture différente par rapport à `script.js`, s'approchant plus d'une strcuture pouvant être comparable à celle du CSS. C'est pour cela que j'ai décider d'utiliser de la programmation orienté objet avec des classes, pour mieux trier le code. Voici la structure des deux classes :
 
+```
+/ GSAP
+├── constructor()
+├── canvas(canvas)
+├── image(img_container1, img_container2, img_container3, img1, img2, img3)
+├── text(text1, text2, text3, subtext1, subtext2, subtext3)
+├── loaded(circle, loader)
+├── loaderText(textTop, textBottom)
+├── loaderTextReverse(textTop, textBottom)
+└── button(button, buttonBack) (c'étais juste un test)
+```
+
+```
+/ Event
+├── textImage(text1_1, text1_2, text1_3, text1_4, text2_1, text2_2, text2_3, text2_4, text3_1, text3_2, text3_3, text3_4)
+│   ├── textImage1(text1_1, text1_2, text1_3, text1_4)
+│   ├── textImage2(text2_1, text2_2, text2_3, text2_4)
+└── └─ textImage3(text3_1, text3_2, text3_3, text3_4)
+```
